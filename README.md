@@ -9,7 +9,7 @@ net.fortuna.ical4j.model.TimeZone has been replaced with a new
    version.  The iCal4j TimeZone class expands the Daylight and
    Standard rules over a huge range (1601-present) on every call to
    inDaylight. 
-#### comment
+#### comments
 - unclear if this change is still relevant
 
 ### Uris.java
@@ -19,7 +19,7 @@ Uris.java: commented out the code in Uris.encode() and
    where the SchemeSpecificPart was "MAILTO%3Afoo%40bar.com".  This
    was done this way (via URIs.java) so as to minimize the amount of
    iCal4j code changed. 
-#### comment
+#### comments
 - This appears to have been fixed in current version of ical4j. Corresponding unit tests are in UrisTest.java
 
 ### net.fortuna.ical4j.data.UnfoldingReader
@@ -31,8 +31,9 @@ net.fortuna.ical4j.data.UnfoldingReader has been changed to use
    UnfoldingInputStream.java has also been changed to accept CR-LF-tab and LF-tab as
    continuation sequences in folded lines, in addition to the existing
 
-#### comment
-   This change seems unnecessary, because the same behavior can be achieved with a JVM argument -Dical4j.unfolding.relaxed=true. Newer version of ical4j already accepts CR-LF-tab and LF-tab as continuation sequences in folded lines.
+#### comments
+  - This first change seems unnecessary, because the same behavior can be achieved with a JVM argument -Dical4j.unfolding.relaxed=true. 
+  - The second change is also unnecessary, because the current version of ical4j already accepts CR-LF-tab and LF-tab as continuation sequences in folded lines.
 
 #### Parse iCalendar objects containing multiple ZCALENDAR sections.
 This change appears to be still relevant. Could be merged into ical4j?
